@@ -1,9 +1,9 @@
 //
 //  main.c
-//  DAS01
+//  Keisoku
 //
-//  Created by 冨澤眞樹 on 2019/09/09.
-//  Copyright © 2019 Masaki Tomisawa. All rights reserved.
+//  Created by tomisawa on 2022/10/26.
+//  Copyright (c) 2022 Masaki Tomisawa. All rights reserved.
 //
 
 #include "keisoku.h"

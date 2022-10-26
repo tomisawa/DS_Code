@@ -3,6 +3,7 @@
 //  DS_Code
 //
 //  Created by tomy on 2022/10/26.
+//  Copyright (c) 2022 Masaki Tomisawa. All rights reserved.
 //
 
 #include <stdio.h>
