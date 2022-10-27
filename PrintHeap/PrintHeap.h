@@ -9,7 +9,7 @@
 #ifndef PrintHeap_h
 #define PrintHeap_h
 
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 void PrintHeap(int heap[], int hsize, int width);
 #endif /* PrintHeap_h */
