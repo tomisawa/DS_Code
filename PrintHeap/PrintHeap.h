@@ -2,8 +2,8 @@
 //  PrintHeap.h
 //  PrintHeap
 //
-//  Created by tomisawa on 2022/10/26.
-//  Copyright (c) 2022 Masaki Tomisawa. All rights reserved.
+//  Created by tomisawa masaki on 2022/10/27.
+//  Copyright (C) 2022 Masaki, TOMISAWA. All rights reserved.
 //
 
 #ifndef PrintHeap_h
