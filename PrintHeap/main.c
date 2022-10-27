@@ -22,7 +22,7 @@ int main() {
     return 0;
 }
 //
-// Output from running this program
+// Output of this program
 //
 //                                            0
 //                      1----------------------------------------------2
