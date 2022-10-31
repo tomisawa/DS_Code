@@ -26,13 +26,14 @@ int LinearSearch(int x, int D[], int size) {
     return -1;
 }
 
+// Algorithm 4.1 for-loop version
+// found : i, not found : -1
 int LinearSearch2(int x, int D[], int size) {
     for (int i = 0; i < size; i++) {
         if (x == D[i]) {
             return i;
         }
     }
-
     return -1;
 }
 
@@ -53,7 +54,6 @@ int BinarySearch(int x, int D[], int size) {
         } else {
             right = mid - 1;
         }
-
         mid = (left + right) / 2;
     }
 
@@ -66,6 +66,7 @@ int BinarySearch(int x, int D[], int size) {
     }
 }
 
+// How does it compare to Algorithm 4.2 ?
 int BinarySearch2(int x, int D[], int size) {
     int left, right, mid;
 
@@ -86,6 +87,7 @@ int BinarySearch2(int x, int D[], int size) {
     return -1;
 }
 
+//
 int ChkCode(int (*f)(int, int [], int), int D[], int size) {
     int i;
 
@@ -99,7 +101,7 @@ int ChkCode(int (*f)(int, int [], int), int D[], int size) {
     return i;
 }
 
-int main(int argc, const char *argv[]) {
+int main(void) {
     int a[1000];
     int x, i;
     const int size = sizeof a / sizeof a[0];
