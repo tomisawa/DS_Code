@@ -2,8 +2,8 @@
 //  keisoku.h
 //  DAS01
 //
-//  Created by 冨澤眞樹 on 2019/09/10.
-//  Copyright © 2019 Masaki Tomisawa. All rights reserved.
+//  Created by TOMISAWA, Masaki on 2022/10/31.
+//  Copyright (C) 2022 Masaki Tomisawa. All rights reserved.
 //
 
 #ifndef keisoku_h
