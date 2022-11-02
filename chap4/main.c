@@ -34,6 +34,7 @@ int LinearSearch2(int x, int D[], int size) {
             return i;
         }
     }
+
     return -1;
 }
 
@@ -54,6 +55,7 @@ int BinarySearch(int x, int D[], int size) {
         } else {
             right = mid - 1;
         }
+
         mid = (left + right) / 2;
     }
 
@@ -87,7 +89,7 @@ int BinarySearch2(int x, int D[], int size) {
     return -1;
 }
 
-//
+// Function to make sure it works
 int ChkCode(int (*f)(int, int [], int), int D[], int size) {
     int i;
 

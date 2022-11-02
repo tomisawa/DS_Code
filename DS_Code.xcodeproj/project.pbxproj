@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE33F1DA290E173B0000FE64 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EE33F1D7290E173A0000FE64 /* main.c */; };
-		EE33F1DB290E17720000FE64 /* initarray.c in Sources */ = {isa = PBXBuildFile; fileRef = EE33F1D6290E17390000FE64 /* initarray.c */; };
+		42C9860D2911F78B001BFAE4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EE33F1D7290E173A0000FE64 /* main.c */; };
+		42C9860F2911F790001BFAE4 /* initarray.c in Sources */ = {isa = PBXBuildFile; fileRef = EE33F1D6290E17390000FE64 /* initarray.c */; };
 		EE5101DB2908AE9500615EB4 /* keisoku.c in Sources */ = {isa = PBXBuildFile; fileRef = EE5101D82908AE9500615EB4 /* keisoku.c */; };
 		EEACE980290AA91D003E6F89 /* PrintHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = EEACE97E290AA91D003E6F89 /* PrintHeap.c */; };
 /* End PBXBuildFile section */
@@ -165,10 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE33F1DA290E173B0000FE64 /* main.c in Sources */,
 				EEACE980290AA91D003E6F89 /* PrintHeap.c in Sources */,
 				EE5101DB2908AE9500615EB4 /* keisoku.c in Sources */,
-				EE33F1DB290E17720000FE64 /* initarray.c in Sources */,
+				42C9860D2911F78B001BFAE4 /* main.c in Sources */,
+				42C9860F2911F790001BFAE4 /* initarray.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
