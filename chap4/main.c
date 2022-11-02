@@ -95,7 +95,7 @@ int ChkCode(int (*f)(int, int [], int), int D[], int size) {
 
     for (i = 0; i < size; i++) {
         if (i != f(D[i], D, size)) {
-            printf("Error i=%d", i);
+            printf("Error i=%d\n", i);
             return -1;
         }
     }
