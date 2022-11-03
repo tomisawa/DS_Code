@@ -11,19 +11,19 @@
 #include "initarray.h"
 
 // Algorithm 4.1
-int LinearSearch(int x, int D[], int size) {
+void LinearSearch(int x, int D[], int size) {
     int i = 0;
 
     while (i < size) {
         if (x == D[i]) {
             printf("Find D[%d] in LinearSearch()\n", i);
-            return i;
+          return;
         } else {
             i = i + 1;
         }
     }
     printf("Not Found in LinearSearch()\n");
-    return -1;
+  return;
 }
 
 // Algorithm 4.1 for-loop version
@@ -39,7 +39,7 @@ int LinearSearch2(int x, int D[], int size) {
 }
 
 // Algorithm 4.2
-int BinarySearch(int x, int D[], int size) {
+void BinarySearch(int x, int D[], int size) {
     int left, right, mid;
 
     left = 0;
@@ -49,7 +49,7 @@ int BinarySearch(int x, int D[], int size) {
     while (left < right) {
         if (D[mid] == x) {
             printf("Find D[%d] in BinarySearch() \n", mid);
-            return mid;
+          return;
         } else if (D[mid] < x) {
             left = mid + 1;
         } else {
@@ -61,10 +61,10 @@ int BinarySearch(int x, int D[], int size) {
 
     if (D[mid] == x) {
         printf("Find D[%d] in BinarySearch()\n", mid);
-        return mid;
+        return;
     } else {
         printf("Not Found in BinarySearch()\n");
-        return -1;
+        return;
     }
 }
 

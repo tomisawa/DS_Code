@@ -23,18 +23,18 @@ static int GetPrime() {
     }
 
     while (1) {
-        int flag = 0;
+        int  isDivisible = 0;
 
         for (int i = 3; i <= sqrt(p); i += 2) {
             if (p % i == 0) {
-                flag = 1;
+                 isDivisible = 1;
                 break;
             }
         }
 
         p += 2;
 
-        if (flag == 0) {
+        if ( isDivisible == 0) {
             return p - 2;
         }
     }
