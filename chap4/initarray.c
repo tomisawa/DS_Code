@@ -9,31 +9,33 @@
 #include <assert.h>
 #include <math.h>
 #include "initarray.h"
+static int p = 2;
+
+void InitPrime(void) {
+    p = 2;
+}
 
 // GetPrime returns a prime number on each call
 static int GetPrime() {
-    static int i = 1; // !! static !!
-    int j, flag;
-
-    if (i == 1) {
-        i = 3;
+    if (p == 2) {
+        p = 3;
         return 2;
     }
 
     while (1) {
-        flag = 0;
+        int flag = 0;
 
-        for (j = 3; j <= sqrt(i); j += 2) {
-            if (i % j == 0) {
+        for (int i = 3; i <= sqrt(p); i += 2) {
+            if (p % i == 0) {
                 flag = 1;
                 break;
             }
         }
 
-        i += 2;
+        p += 2;
 
         if (flag == 0) {
-            return i - 2;
+            return p - 2;
         }
     }
     return -1; // Something is wrong.

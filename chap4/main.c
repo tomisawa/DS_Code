@@ -108,6 +108,7 @@ int main(void) {
     int x, i;
     const int size = sizeof a / sizeof a[0];
 
+//    InitPrime();
     InitArray(a, size);
 
   #ifdef DEBUG

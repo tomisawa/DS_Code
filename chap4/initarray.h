@@ -10,6 +10,7 @@
 #define initarray_h
 
 #include <stdio.h>
+void InitPrime(void);
 void InitArray(int *, int);
 
 #endif /* initarray_h */
