@@ -89,8 +89,8 @@ int BinarySearch2(int x, int D[], int size) {
     return -1;
 }
 
-// Function to make sure it works
-int ChkCode(int (*f)(int, int [], int), int D[], int size) {
+// Test all the data
+int Test(int (*f)(int, int [], int), int D[], int size) {
     int i;
 
     for (i = 0; i < size; i++) {
@@ -119,11 +119,11 @@ int main(void) {
 
   #endif
 
-    if ((x = ChkCode(LinearSearch2, a, size)) >= 0) {
+    if ((x = Test(LinearSearch2, a, size)) >= 0) {
         printf("OK %d\n", x);
     }
 
-    if ((x = ChkCode(BinarySearch2, a, size)) >= 0) {
+    if ((x = Test(BinarySearch2, a, size)) >= 0) {
         printf("OK %d\n", x);
     }
 
