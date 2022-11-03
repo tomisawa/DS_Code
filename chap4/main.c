@@ -17,13 +17,13 @@ void LinearSearch(int x, int D[], int size) {
     while (i < size) {
         if (x == D[i]) {
             printf("Find D[%d] in LinearSearch()\n", i);
-          return;
+            return;
         } else {
             i = i + 1;
         }
     }
     printf("Not Found in LinearSearch()\n");
-  return;
+    return;
 }
 
 // Algorithm 4.1 for-loop version
@@ -49,7 +49,7 @@ void BinarySearch(int x, int D[], int size) {
     while (left < right) {
         if (D[mid] == x) {
             printf("Find D[%d] in BinarySearch() \n", mid);
-          return;
+            return;
         } else if (D[mid] < x) {
             left = mid + 1;
         } else {
