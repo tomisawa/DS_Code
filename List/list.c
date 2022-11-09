@@ -16,9 +16,9 @@ void printList(Record *p) {
     }
 
     do {
-        #if DEBUG
+#if DEBUG
         printf("%p:", p);
-        #endif
+#endif
         printf("%d\t", p->data);
     } while ((p = p->next) != NULL);
     printf("\n");
@@ -30,24 +30,25 @@ void subfreeList(Record *p) {
         free(p);
         return;
     }
+
     free(p);
     return;
 }
 
-Record * freeList(Record *head) {
-// FreeList() always returns NULL.
+Record *freeList(Record *head) {
+    // FreeList() always returns NULL.
     if (head == NULL) {
         // printf("Empty List\n");
         return NULL;
     }
-    subfreeList(head);
 
+    subfreeList(head);
     return NULL;
 }
 
 // Algorithm 2.2
 // 1 (2 3) → (1 2 3)
-Record * insertFirst(Record *head, int data) {
+Record *insertFirst(Record *head, int data) {
     Record *new_r = (Record *)malloc(sizeof(Record));
 
     new_r->data = data;
@@ -57,12 +58,12 @@ Record * insertFirst(Record *head, int data) {
 
 // Algorithm 2.3
 // (1 2 3 4) → (2 3 4)
-Record * deleteFirst(Record *head) {
+Record *deleteFirst(Record *head) {
     assert(head != NULL);
     Record *p = head;
-    #if DEBUG
+#if DEBUG
     printf("%p:", p);
-    #endif
+#endif
     head = head->next; // Save the return value
     free(p);
     return head;
@@ -74,7 +75,7 @@ int getFirst(Record *head) {
 }
 
 // If not found, returns NULL.
-Record * Find(Record *head, int x) {
+Record *Find(Record *head, int x) {
     while (head != (Record *)NULL) {
         if (head->data == x) {
             return head;
