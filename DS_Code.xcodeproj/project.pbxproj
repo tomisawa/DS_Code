@@ -11,7 +11,7 @@
 		EE5101DB2908AE9500615EB4 /* keisoku.c in Sources */ = {isa = PBXBuildFile; fileRef = EE5101D82908AE9500615EB4 /* keisoku.c */; };
 		EEACE980290AA91D003E6F89 /* PrintHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = EEACE97E290AA91D003E6F89 /* PrintHeap.c */; };
 		EEEF28BF291A9C6E007344C4 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = EEEF28BE291A9C6E007344C4 /* list.c */; };
-		EEEF28C2291A9C85007344C4 /* listsample.c in Sources */ = {isa = PBXBuildFile; fileRef = EEEF28C1291A9C85007344C4 /* listsample.c */; };
+		EEEF28C2291A9C85007344C4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EEEF28C1291A9C85007344C4 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,7 +41,7 @@
 		EEACE97F290AA91D003E6F89 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		EEEF28BE291A9C6E007344C4 /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
 		EEEF28C0291A9C7A007344C4 /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
-		EEEF28C1291A9C85007344C4 /* listsample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = listsample.c; sourceTree = "<group>"; };
+		EEEF28C1291A9C85007344C4 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 		EE0F9F0D291A57DB00DD02A5 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				EEEF28C1291A9C85007344C4 /* listsample.c */,
+				EEEF28C1291A9C85007344C4 /* main.c */,
 				EEEF28C0291A9C7A007344C4 /* list.h */,
 				EEEF28BE291A9C6E007344C4 /* list.c */,
 			);
@@ -186,7 +186,7 @@
 				EEACE980290AA91D003E6F89 /* PrintHeap.c in Sources */,
 				EE5101DB2908AE9500615EB4 /* keisoku.c in Sources */,
 				42C9860F2911F790001BFAE4 /* initarray.c in Sources */,
-				EEEF28C2291A9C85007344C4 /* listsample.c in Sources */,
+				EEEF28C2291A9C85007344C4 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

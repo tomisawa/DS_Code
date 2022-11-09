@@ -9,9 +9,9 @@
 #include <assert.h>
 #include "list.h"
 
-void PrintList(Record *p) {
+void printList(Record *p) {
     if (p == NULL) {
-        printf("Empty List\n");
+        printf("Empty\n");
         return;
     }
 
@@ -24,60 +24,30 @@ void PrintList(Record *p) {
     printf("\n");
 }
 
-void _FreeList(Record *p) {
+void subfreeList(Record *p) {
     if (p->next != NULL) {
-        _FreeList(p->next);
+        subfreeList(p->next);
         free(p);
         return;
     }
-
     free(p);
     return;
 }
 
-Record * FreeList(Record *head) {
+Record * freeList(Record *head) {
 // FreeList() always returns NULL.
     if (head == NULL) {
-        printf("Empty List\n");
+        // printf("Empty List\n");
         return NULL;
     }
+    subfreeList(head);
 
-    _FreeList(head);
-//  Record *p = head;
-//  Record *next_p;
-//  do{
-//    next_p = p->next;
-//    free(p);
-//  } while ((p = next_p) != NULL);
     return NULL;
 }
 
-Record * MakeList(int data[], int n) {
-    if (n == 0) {
-        return NULL;
-    }
-
-    // Make a list with only one element
-    Record *ptr = (Record *)malloc(sizeof(Record));
-    Record *head = ptr; // Save the return value
-    ptr->data = data[0];
-    ptr->next = NULL;
-
-    // Add an element to the end of the list. Not the head!
-    for (int i = 1; i < n; i++) {
-        Record *new_r = (Record *)malloc(sizeof(Record));
-        new_r->data = data[i];
-        new_r->next = NULL;
-        ptr->next = new_r;
-        ptr = new_r;
-    }
-
-    return head;
-}
-
 // Algorithm 2.2
-// In Lisp, (cons 1 '(2 3)) → (1 2 3)
-Record * Cons(Record *head, int data) {
+// 1 (2 3) → (1 2 3)
+Record * insertFirst(Record *head, int data) {
     Record *new_r = (Record *)malloc(sizeof(Record));
 
     new_r->data = data;
@@ -86,8 +56,8 @@ Record * Cons(Record *head, int data) {
 }
 
 // Algorithm 2.3
-// In Lisp, (cdr '(1 2 3 4 )) → (2 3 4)
-Record * Cdr(Record *head) {
+// (1 2 3 4) → (2 3 4)
+Record * deleteFirst(Record *head) {
     assert(head != NULL);
     Record *p = head;
     #if DEBUG
@@ -98,12 +68,12 @@ Record * Cdr(Record *head) {
     return head;
 }
 
-int Car(Record *head) {
+int getFirst(Record *head) {
     assert(head != NULL);
     return head->data;
 }
 
-// Non-Recursive
+// If not found, returns NULL.
 Record * Find(Record *head, int x) {
     while (head != (Record *)NULL) {
         if (head->data == x) {
@@ -113,30 +83,4 @@ Record * Find(Record *head, int x) {
         head = head->next;
     }
     return NULL;
-}
-
-// Non-Recursive
-Record * Delete(Record *head, Record *delete) {
-    assert(head != NULL);
-    assert(delete != NULL);
-
-    // Case 1 : delete first element
-    if (head == delete) {
-        head = delete->next;
-        delete->next = NULL;
-        return head;
-    }
-
-    // Case 2 : Except for Case 1
-    Record *prev = head;
-
-    while (prev->next != delete) if ((prev = prev->next) == NULL) {
-            break;
-        }
-
-    assert(prev->next != NULL);
-    assert(prev->next == delete);
-    prev->next = delete->next;
-    delete->next = NULL;
-    return head;
 }

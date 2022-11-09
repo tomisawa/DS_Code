@@ -9,22 +9,20 @@
 #ifndef list_h
 #define list_h
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 typedef struct Record {
-  int data;
-  struct Record *next;
+    int data;
+    struct Record *next;
 } Record;
 
-void PrintList(Record *);
-Record * MakeList(int [], int);
-Record * Cons(Record *, int);
-Record * FreeList(Record *);
-Record * Cdr(Record *);
-int Car(Record *);
-Record * Find(Record *, int);
-Record * Delete(Record *, Record *);
+void printList(Record *);
+Record *freeList(Record *);
+Record *insertFirst(Record *, int);
+Record *deleteFirst(Record *);
+int getFirst(Record *);
+Record *Find(Record *, int);
 
 #endif /* list_h */
