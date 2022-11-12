@@ -21,8 +21,8 @@ typedef struct Record {
 void printList(Record *);
 Record *freeList(Record *);
 Record *insertFirst(Record *, int);
-Record *deleteFirst(Record *);
-int getFirst(Record *);
-Record *Find(Record *, int);
+Record *deleteFirst (Record *);
+int getData(Record *);
+Record *findRecord(Record *, int);
 
 #endif /* list_h */

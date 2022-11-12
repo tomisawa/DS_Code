@@ -6,22 +6,25 @@
 //  Copyright (C) 2022 Masaki Tomisawa. All rights reserved.
 //
 
-#include <assert.h>
 #include "list.h"
+
+#include <assert.h>
 
 void printList(Record *p) {
     if (p == NULL) {
-        printf("Empty\n");
+        printf("()\n");
         return;
     }
+
+    printf("( ");
 
     do {
 #if DEBUG
         printf("%p:", p);
 #endif
-        printf("%d\t", p->data);
+        printf("%d ", p->data);
     } while ((p = p->next) != NULL);
-    printf("\n");
+    printf(")\n");
 }
 
 void subfreeList(Record *p) {
@@ -69,13 +72,13 @@ Record *deleteFirst(Record *head) {
     return head;
 }
 
-int getFirst(Record *head) {
+int getData(Record *head) {
     assert(head != NULL);
     return head->data;
 }
 
 // If not found, returns NULL.
-Record *Find(Record *head, int x) {
+Record *findRecord(Record *head, int x) {
     while (head != (Record *)NULL) {
         if (head->data == x) {
             return head;

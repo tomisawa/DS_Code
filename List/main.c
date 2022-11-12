@@ -8,37 +8,47 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "list.h"
 
+//
+// Predict the output of printList()
+//
 int main(void) {
     Record *head;
 
-    // Using the Insert()
+    // Using the insert()
     head = insertFirst(NULL, 3);
     head = insertFirst(head, 2);
     head = insertFirst(head, 1);
     printList(head);
-    head = deleteFirst(head);
-    printList(head);
     freeList(head); // Free the entire list
 
-    // Use the return value of Insert()
+    // Use the return value of InsertFirst()
     head = insertFirst(insertFirst(insertFirst(NULL, 6), 5), 4);
-    printList(head); // (4 5 6)
-    printList(Find(head, 5)); // (5 6)
-    printList(Find(head, 2)); // Empty
-    printList(head); // (4 5 6)
+    printList(head);
+    freeList(head);
 
-    // getFirst()
-    printf("%d\n", getFirst(head)); // 4
-    printList(head); // (4 5 6)
+    // Combining insertFirst() and deleteFirst()
+    head = deleteFirst(insertFirst(insertFirst(insertFirst(NULL, 6), 5), 4));
+    printList(head);
+    freeList(head);
+    head = insertFirst(deleteFirst(insertFirst(insertFirst(NULL, 6), 5)), 4);
+    printList(head);
+    freeList(head);
 
-    // getFirst(), deleteFirst()
-    printf("%d\n", getFirst(head = deleteFirst(head))); // 4
-    printList(head); // (5 6)
 
-    printf("%d\n", getFirst(head = deleteFirst(head))); // 5
-    printList(head); // (6)
+    // Using the getDta()
+    head = insertFirst(deleteFirst(insertFirst(insertFirst(NULL, 9), 8)), 7);
+    printf("%d\n", getData(head));
+    freeList(head);
 
-    printList(head = deleteFirst(head)); // Empty
+    // Using the findRecord()
+    head = insertFirst(insertFirst(insertFirst(NULL, 6), 5), 4);
+    printList(head);
+    printList(findRecord(head, 5));
+    printf("%d\n", getData(findRecord(head, 5)));
+    printList(findRecord(head, 2));
+    printList(head);
+    freeList(head);
 }
