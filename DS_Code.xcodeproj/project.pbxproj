@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		42C9860F2911F790001BFAE4 /* initarray.c in Sources */ = {isa = PBXBuildFile; fileRef = EE33F1D6290E17390000FE64 /* initarray.c */; };
-		EE5101DB2908AE9500615EB4 /* keisoku.c in Sources */ = {isa = PBXBuildFile; fileRef = EE5101D82908AE9500615EB4 /* keisoku.c */; };
 		EEACE980290AA91D003E6F89 /* PrintHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = EEACE97E290AA91D003E6F89 /* PrintHeap.c */; };
-		EEEF28BF291A9C6E007344C4 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = EEEF28BE291A9C6E007344C4 /* list.c */; };
-		EEEF28C2291A9C85007344C4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EEEF28C1291A9C85007344C4 /* main.c */; };
+		EEF796652920DE1E00E10ABC /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EEF796642920DE1E00E10ABC /* main.c */; };
+		EEF796682921B40300E10ABC /* initData.c in Sources */ = {isa = PBXBuildFile; fileRef = EEF796672921B40300E10ABC /* initData.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +41,9 @@
 		EEEF28BE291A9C6E007344C4 /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
 		EEEF28C0291A9C7A007344C4 /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
 		EEEF28C1291A9C85007344C4 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		EEF796642920DE1E00E10ABC /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		EEF796662921B40300E10ABC /* initData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = initData.h; sourceTree = "<group>"; };
+		EEF796672921B40300E10ABC /* initData.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = initData.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		EE5101C42908ADA300615EB4 = {
 			isa = PBXGroup;
 			children = (
+				EEF796632920D15500E10ABC /* chap5 */,
 				EE0F9F0D291A57DB00DD02A5 /* List */,
 				EE33F1D5290E16DE0000FE64 /* chap4 */,
 				EEACE97C290AA8FF003E6F89 /* PrintHeap */,
@@ -122,6 +125,16 @@
 				EEACE97D290AA91D003E6F89 /* PrintHeap.h */,
 			);
 			path = PrintHeap;
+			sourceTree = "<group>";
+		};
+		EEF796632920D15500E10ABC /* chap5 */ = {
+			isa = PBXGroup;
+			children = (
+				EEF796642920DE1E00E10ABC /* main.c */,
+				EEF796662921B40300E10ABC /* initData.h */,
+				EEF796672921B40300E10ABC /* initData.c */,
+			);
+			path = chap5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEEF28BF291A9C6E007344C4 /* list.c in Sources */,
+				EEF796682921B40300E10ABC /* initData.c in Sources */,
+				EEF796652920DE1E00E10ABC /* main.c in Sources */,
 				EEACE980290AA91D003E6F89 /* PrintHeap.c in Sources */,
-				EE5101DB2908AE9500615EB4 /* keisoku.c in Sources */,
 				42C9860F2911F790001BFAE4 /* initarray.c in Sources */,
-				EEEF28C2291A9C85007344C4 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
