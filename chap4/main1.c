@@ -5,6 +5,9 @@
 //  Created by TOMISAWA, Masaki on 2022/11/08.
 //  Copyright (C) 2022 Masaki Tomisawa. All rights reserved.
 //
+// BinarySearch3(int x, int left, int right, int D[])
+// BinarySearch4(int x, int left, int right, int D[])
+//
 
 #include <math.h>
 #include <stdio.h>

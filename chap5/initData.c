@@ -1,5 +1,5 @@
 //
-//  initArray.c
+//  initData.c
 //  DS_Code
 //
 //  Created by tomy on 2022/11/14.
@@ -14,7 +14,7 @@ static void setData(int *D, int size) {
   }
 }
 
-// Fisher–Yates shuffle Algorithm
+// Fisher-Yates shuffle Algorithm
 static void shuffle(int *D, int size) {
   for (int i = 0; i < size; i++) {
     int j = rand() % size;

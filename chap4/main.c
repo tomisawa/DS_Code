@@ -5,6 +5,12 @@
 //  Created by TOMISAWA, Masaki on 2022/10/30.
 //  Copyright (C) 2022 Masaki Tomisawa. All rights reserved.
 //
+// LinearSearch(int x, int D[], int size)
+// LinearSearch2(int x, int D[], int size)
+// BinarySearch(int x, int D[], int size)
+// BinarySearch2(int x, int D[], int size) 
+//
+
 
 #include <math.h>
 #include <stdio.h>
