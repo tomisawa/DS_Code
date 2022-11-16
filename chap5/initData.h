@@ -1,7 +1,7 @@
 //
 //  initArray.h
 //  DS_Code
-//  
+//
 //  Created by tomy on 2022/11/14.
 //  Copyright (c) 2022 Masaki Tomisawa. All rights reserved.
 //
