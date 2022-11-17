@@ -5,6 +5,9 @@
 //  Created by tomy on 2022/11/13.
 //  Copyright (c) 2022 Masaki Tomisawa. All rights reserved.
 //
+// Algorithm 5.1 SelectionSort(int D[], int size)
+// Algorithm 5.2 InsertionSort(int D[], int size) 
+//
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,7 +32,7 @@ void SelectionSort(int D[], int size) {
     max = D[max_index];
 
     for (int j = 1; j <= i; j = j + 1) {
-      if (D[j] >= max) {
+      if (D[j] >= max) { // >= or > 
         max_index = j;
         max = D[max_index];
       }

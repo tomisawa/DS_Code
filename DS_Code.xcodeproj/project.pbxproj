@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42C9860F2911F790001BFAE4 /* initarray.c in Sources */ = {isa = PBXBuildFile; fileRef = EE33F1D6290E17390000FE64 /* initarray.c */; };
+		EE7CDB0B29254352004DD6FF /* heapsort.c in Sources */ = {isa = PBXBuildFile; fileRef = EE7CDB0A29254352004DD6FF /* heapsort.c */; };
 		EEACE980290AA91D003E6F89 /* PrintHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = EEACE97E290AA91D003E6F89 /* PrintHeap.c */; };
-		EEF796652920DE1E00E10ABC /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EEF796642920DE1E00E10ABC /* main.c */; };
 		EEF796682921B40300E10ABC /* initData.c in Sources */ = {isa = PBXBuildFile; fileRef = EEF796672921B40300E10ABC /* initData.c */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +35,7 @@
 		EE5101D82908AE9500615EB4 /* keisoku.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keisoku.c; sourceTree = "<group>"; };
 		EE5101D92908AE9500615EB4 /* keisoku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keisoku.h; sourceTree = "<group>"; };
 		EE5101DA2908AE9500615EB4 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		EE7CDB0A29254352004DD6FF /* heapsort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = heapsort.c; sourceTree = "<group>"; };
 		EEACE97D290AA91D003E6F89 /* PrintHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintHeap.h; sourceTree = "<group>"; };
 		EEACE97E290AA91D003E6F89 /* PrintHeap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PrintHeap.c; sourceTree = "<group>"; };
 		EEACE97F290AA91D003E6F89 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -67,6 +68,13 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		EE25B1302925D20400E6ED6D /* chap6 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = chap6;
+			sourceTree = "<group>";
+		};
 		EE33F1D5290E16DE0000FE64 /* chap4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +89,7 @@
 		EE5101C42908ADA300615EB4 = {
 			isa = PBXGroup;
 			children = (
+				EE25B1302925D20400E6ED6D /* chap6 */,
 				EEF796632920D15500E10ABC /* chap5 */,
 				EE0F9F0D291A57DB00DD02A5 /* List */,
 				EE33F1D5290E16DE0000FE64 /* chap4 */,
@@ -133,6 +142,7 @@
 				EEF796642920DE1E00E10ABC /* main.c */,
 				EEF796662921B40300E10ABC /* initData.h */,
 				EEF796672921B40300E10ABC /* initData.c */,
+				EE7CDB0A29254352004DD6FF /* heapsort.c */,
 			);
 			path = chap5;
 			sourceTree = "<group>";
@@ -196,8 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF796682921B40300E10ABC /* initData.c in Sources */,
-				EEF796652920DE1E00E10ABC /* main.c in Sources */,
 				EEACE980290AA91D003E6F89 /* PrintHeap.c in Sources */,
+				EE7CDB0B29254352004DD6FF /* heapsort.c in Sources */,
 				42C9860F2911F790001BFAE4 /* initarray.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
