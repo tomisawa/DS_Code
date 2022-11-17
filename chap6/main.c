@@ -32,10 +32,13 @@ int Partition(int D[], int left, int right) {
   while (i <= j) {
     while (D[i] < D[right]) { i = i + 1; }
     while (D[j] >= D[right] && j >= i) { j = j - 1; }
-    if (i < j) { swap(&D[i], &D[j]); }
+    if (i < j) {
+      swap(&D[i], &D[j]);
+      printf("swap(i=%d,j=%d)\n", i, j);
+    }
   }
   swap(&D[i], &D[right]);
-  printf("swap(%d,%d)", i, right);
+  printf("swap(i=%d,right=%d)\n", i, right);
 
   return i;
 }
