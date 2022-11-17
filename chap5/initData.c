@@ -32,8 +32,6 @@ int initData(int *D, int size) {
 }
 
 void PrintD(int *D, int size) {
-  for (int i = 0; i < size; i++) {
-    printf("%02d  ", D[i]);
-  }
+  for (int i = 0; i < size; i++) printf("%02d  ", D[i]);
   printf("\n\n");
 }
