@@ -47,10 +47,21 @@ int Partition(int D[], int left, int right) {
 
 void QuickSort(int D[], int left, int right) {
   if (left < right) {
+      
+    printf("QuickSort(D[],%d,%d)\t", left, right);
+    for (int i = left; i < right; i++) {
+      printf("%d ", D[i]);
+    }
+    printf("%d\n", D[right]);
+
     int pivot_index = Partition(D, left, right);
+
+    printf("\tpivot_index=%d\n", pivot_index);
+
     QuickSort(D, left, pivot_index - 1);
     QuickSort(D, pivot_index + 1, right);
   }
+  else { printf("Case: left(%+d) >= right(%+d)\n", left, right); }
 }
 
 int main(void) {
