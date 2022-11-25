@@ -39,6 +39,7 @@ int Partition(int D[], int left, int right) {
     while (D[j] >= D[right] && j >= i) { j = j - 1; }
     if (i < j) {
       swap(&D[i], &D[j]);
+      printf("swap");
     }
   }
   swap(&D[i], &D[right]);
@@ -46,9 +47,9 @@ int Partition(int D[], int left, int right) {
 }
 
 void QuickSort(int D[], int left, int right) {
+  //  printf("QS(%d,%d)\n", left, right);
   if (left < right) {
-      
-    printf("QuickSort(D[],%d,%d)\t", left, right);
+    printf("QuickSort(D,%d,%d)\t", left, right);
     for (int i = left; i < right; i++) {
       printf("%d ", D[i]);
     }
@@ -61,14 +62,15 @@ void QuickSort(int D[], int left, int right) {
     QuickSort(D, left, pivot_index - 1);
     QuickSort(D, pivot_index + 1, right);
   }
-  else { printf("Case: left(%+d) >= right(%+d)\n", left, right); }
+
+  // else { printf("Case: left(%+d) >= right(%+d)\n", left, right); }
 }
 
 int main(void) {
   //  int D[] = { 17, 39, 1, 9, 5, 24, 2, 11, 23, 6  };
   //  int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
-  //  int D[] = { 31, 23, 71, 41, 21, 39, 35, 28 };
-  //  int D[] = { 0, 1, 2, 3, 4, 5 };
+  //    int D[] = { 31, 23, 71, 41, 21, 39, 35, 28 };
+  //     int D[] = { 0, 1, 2, 3, 4, 5 };
   int D[] = { 5, 4, 3, 2, 1, 0 };
   const int D_SIZE = COUNTOF(D);
 
