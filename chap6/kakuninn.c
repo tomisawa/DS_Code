@@ -29,7 +29,6 @@ void swap(int *a, int *b) {
 //
 int Partition(int D[], int left, int right) {
   int i, j, k;
-
   k = left;
   swap(&D[k], &D[right]);
   i = left;
@@ -37,19 +36,18 @@ int Partition(int D[], int left, int right) {
   while (i <= j) {
     while (D[i] < D[right]) { i = i + 1; }
     while (D[j] >= D[right] && j >= i) { j = j - 1; }
-    if (i < j) {
-      swap(&D[i], &D[j]);
-      printf("swap");
-    }
+    if (i < j) { swap(&D[i], &D[j]); }
   }
   swap(&D[i], &D[right]);
   return i;
 }
 
 void QuickSort(int D[], int left, int right) {
-  //  printf("QS(%d,%d)\n", left, right);
+  
+  printf("QS(%d,%d) ", left, right);
+  
   if (left < right) {
-    printf("QuickSort(D,%d,%d)\t", left, right);
+  
     for (int i = left; i < right; i++) {
       printf("%d ", D[i]);
     }
@@ -62,8 +60,7 @@ void QuickSort(int D[], int left, int right) {
     QuickSort(D, left, pivot_index - 1);
     QuickSort(D, pivot_index + 1, right);
   }
-
-  // else { printf("Case: left(%+d) >= right(%+d)\n", left, right); }
+  else { printf("is left >= right\n"); }
 }
 
 int main(void) {
