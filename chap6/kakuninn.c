@@ -2,8 +2,8 @@
 //  main.c
 //  DSA07
 //
-//  Created by Masaki Tomisawa on 2019/11/06.
-//  Copyrightv(C) 2019 Masaki Tomisawa. All rights reserved.
+//  Created by Masaki Tomisawa on 2022/11/27.
+//  Copyrightv(C) 2022 Masaki Tomisawa. All rights reserved.
 //
 
 #include <stdio.h>
