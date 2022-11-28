@@ -9,7 +9,6 @@
 #include <stdio.h>
 #define COUNTOF(array) (sizeof(array) / sizeof(array[0]))
 int WhileInnerCount ;
-int WhileOuterCount ;
 
 void PrintD(int D[], int size) {
   for (int i = 0; i < size; i++) { printf("%2d  ", i); }
@@ -39,7 +38,6 @@ int Partition(int D[], int left, int right) {
   i = left;
   j = right - 1;
   while (i <= j) {
-		WhileOuterCount++;
 		while (D[i] < D[right]) { i = i + 1; WhileInnerCount++; }
 		while (D[j] >= D[right] && j >= i) { j = j - 1; WhileInnerCount++;}
     if (i < j) { swap(&D[i], &D[j]); }
@@ -65,18 +63,15 @@ void QuickSort(int D[], int left, int right) {
 
 int main(void) {
 //    int D[] = { 17, 39, 1, 9, 5, 24, 2, 11, 23, 6  };
-  //  int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
+//    int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
   //    int D[] = { 31, 23, 71, 41, 21, 39, 35, 28 };
 //       int D[] = { 0, 1, 2, 3, 4, 5 };
-  int D[] = {3,2,1,0 };
+  int D[] = {9,8,7,6,5,4,3,2,1,0 };
   const int D_SIZE = COUNTOF(D);
 	WhileInnerCount=0;
-	WhileOuterCount=0;
   PrintD(D, D_SIZE);
   QuickSort(D, 0, D_SIZE - 1);
   PrintD(D, D_SIZE);
 	printf("WhileInnerCount =%d\n",WhileInnerCount);
-	printf("WhileOuterCount =%d\n",WhileOuterCount);
-	printf("Count=%d\n",WhileOuterCount*WhileInnerCount);
 	return 0;
 }
