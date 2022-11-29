@@ -8,7 +8,8 @@
 
 #include <stdio.h>
 #define COUNTOF(array) (sizeof(array) / sizeof(array[0]))
-int WhileInnerCount ;
+int QuickSortCount;
+int PartitionCount;
 
 void PrintD(int D[], int size) {
   for (int i = 0; i < size; i++) { printf("%2d  ", i); }
@@ -31,15 +32,16 @@ void swap(int *a, int *b) {
 int Partition(int D[], int left, int right) {
   int i, j, k;
   k = left;
-//  printf("input kijun:");
-//  scanf("%d",&k);
-  
+
+  //  printf("input kijun:");
+  //  scanf("%d",&k);
+  PartitionCount++;
   swap(&D[k], &D[right]);
   i = left;
   j = right - 1;
   while (i <= j) {
-		while (D[i] < D[right]) { i = i + 1; WhileInnerCount++; }
-		while (D[j] >= D[right] && j >= i) { j = j - 1; WhileInnerCount++;}
+    while (D[i] < D[right]) { i = i + 1;  }
+    while (D[j] >= D[right] && j >= i) { j = j - 1; }
     if (i < j) { swap(&D[i], &D[j]); }
   }
   swap(&D[i], &D[right]);
@@ -47,8 +49,9 @@ int Partition(int D[], int left, int right) {
 }
 
 void QuickSort(int D[], int left, int right) {
-  printf("QS(%d,%d) ", left, right);
+  printf("QuickSort(%d,%d) ", left, right);
   if (left < right) {
+    QuickSortCount++;
     for (int i = left; i < right; i++) {
       printf("%d ", D[i]);
     }
@@ -62,16 +65,20 @@ void QuickSort(int D[], int left, int right) {
 }
 
 int main(void) {
-//    int D[] = { 17, 39, 1, 9, 5, 24, 2, 11, 23, 6  };
-//    int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
+  //    int D[] = { 17, 39, 1, 9, 5, 24, 2, 11, 23, 6  };
+  //    int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
   //    int D[] = { 31, 23, 71, 41, 21, 39, 35, 28 };
-//       int D[] = { 0, 1, 2, 3, 4, 5 };
-  int D[] = {9,8,7,6,5,4,3,2,1,0 };
+  int D[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+
+  //  int D[] = {8,7,6,5,4,3,2,1,0 };
   const int D_SIZE = COUNTOF(D);
-	WhileInnerCount=0;
+  PartitionCount = 0;
+  QuickSortCount = 0;
   PrintD(D, D_SIZE);
   QuickSort(D, 0, D_SIZE - 1);
   PrintD(D, D_SIZE);
-	printf("WhileInnerCount =%d\n",WhileInnerCount);
-	return 0;
+  printf("Partition =%d\n", PartitionCount);
+  printf("QuickSortCount =%d\n", QuickSortCount);
+  printf("Cost %d\n", PartitionCount * QuickSortCount);
+  return 0;
 }
