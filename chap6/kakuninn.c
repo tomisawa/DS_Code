@@ -52,10 +52,9 @@ int Partition(int D[], int left, int right) {
 }
 
 int Partition2(int D[], int left, int right) {
-  int i, j;
   PartitionCount++;
-  i = left;
-  for (j = left + 1; j <= right; j++) {
+  int i = left;
+  for (int j = left + 1; j <= right; j++) {
     if (D[j] <= D[left]) {
       i = i + 1;
       swap(&D[j], &D[i]);
