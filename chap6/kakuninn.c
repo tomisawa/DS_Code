@@ -72,6 +72,12 @@ void QuickSort(int D[], int left, int right) {
       printf("%d ", D[i]);
     }
     printf("%d\n", D[right]);
+
+    int pivot = (rand() % (right - left + 1)) + left;
+    printf("index=%d\n", pivot);
+
+    swap(&D[left], &D[pivot]);
+
     int pivot_index = Partition2(D, left, right);
     printf("\tpivot_index=%d\n", pivot_index);
     QuickSort(D, left, pivot_index - 1);
@@ -82,13 +88,14 @@ void QuickSort(int D[], int left, int right) {
 
 int main(void) {
   //  int D[] = { 17, 39, 1, 9, 5, 24, 2, 11, 23, 6  };
-  //  int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
+  int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
+
   //  int D[] = { 31, 23, 71, 41, 21, 39, 35, 28 };
   //    int D[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
-  //  int D[] = { 8, 7, 6, 5, 4, 3, 2, 1, 0 };
-  int size, D[101];
-  size = sizeof(D) / sizeof(D[0]);
-  initData(D, size);
+  //    int D[] = { 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+  //  int size, D[3000];
+  //  size = sizeof(D) / sizeof(D[0]);
+  //  initData(D, size);
 
   const int D_SIZE = COUNTOF(D);
   PartitionCount = 0;
