@@ -7,11 +7,14 @@
 //
 
 #include <stdio.h>
+
+#include "initData.h"
+
 #define COUNTOF(array) (sizeof(array) / sizeof(array[0]))
 int QuickSortCount;
 int PartitionCount;
 
-void PrintD(int D[], int size) {
+void PrintData(int D[], int size) {
   for (int i = 0; i < size; i++) { printf("%2d  ", i); }
   printf("\n");
   for (int i = 0; i < size; i++) { printf("%2d  ", D[i]); }
@@ -48,6 +51,20 @@ int Partition(int D[], int left, int right) {
   return i;
 }
 
+int Partition2(int D[], int left, int right) {
+  int i, j;
+  PartitionCount++;
+  i = left;
+  for (j = left + 1; j <= right; j++) {
+    if (D[j] <= D[left]) {
+      i = i + 1;
+      swap(&D[j], &D[i]);
+    }
+  }
+  swap(&D[i], &D[left]);
+  return i;
+}
+
 void QuickSort(int D[], int left, int right) {
   printf("QuickSort(%d,%d) ", left, right);
   if (left < right) {
@@ -56,7 +73,7 @@ void QuickSort(int D[], int left, int right) {
       printf("%d ", D[i]);
     }
     printf("%d\n", D[right]);
-    int pivot_index = Partition(D, left, right);
+    int pivot_index = Partition2(D, left, right);
     printf("\tpivot_index=%d\n", pivot_index);
     QuickSort(D, left, pivot_index - 1);
     QuickSort(D, pivot_index + 1, right);
@@ -65,12 +82,15 @@ void QuickSort(int D[], int left, int right) {
 }
 
 int main(void) {
-  //    int D[] = { 17, 39, 1, 9, 5, 24, 2, 11, 23, 6  };
-  //    int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
-  //    int D[] = { 31, 23, 71, 41, 21, 39, 35, 28 };
-  int D[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+  //  int D[] = { 17, 39, 1, 9, 5, 24, 2, 11, 23, 6  };
+  //  int D[] = { 39, 19, 93, 82, 14, 66, 40, 34 };
+  //  int D[] = { 31, 23, 71, 41, 21, 39, 35, 28 };
+  //    int D[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+  //  int D[] = { 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+  int size, D[101];
+  size = sizeof(D) / sizeof(D[0]);
+  initData(D, size);
 
-  //  int D[] = {8,7,6,5,4,3,2,1,0 };
   const int D_SIZE = COUNTOF(D);
   PartitionCount = 0;
   QuickSortCount = 0;
