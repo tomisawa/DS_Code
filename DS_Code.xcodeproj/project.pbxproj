@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE1B2189293829E2000AFCB8 /* initData.c in Sources */ = {isa = PBXBuildFile; fileRef = EEF796672921B40300E10ABC /* initData.c */; };
-		EECB61E02931D4E6003658A6 /* kakuninn.c in Sources */ = {isa = PBXBuildFile; fileRef = EEB07EA9292E0C4600613F45 /* kakuninn.c */; };
+		42F024D729417D2900863F8B /* mergesort.c in Sources */ = {isa = PBXBuildFile; fileRef = 42F024D629417D2900863F8B /* mergesort.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +23,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		42F024C9294175A300863F8B /* product.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = product.c; sourceTree = "<group>"; };
+		42F024D1294178B400863F8B /* mergesort2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mergesort2.c; sourceTree = "<group>"; };
+		42F024D629417D2900863F8B /* mergesort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mergesort.c; sourceTree = "<group>"; };
+		42F024DA29417D4100863F8B /* tokuten.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = tokuten.csv; sourceTree = "<group>"; };
 		EE0F9F0E291A58D600DD02A5 /* main1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main1.c; sourceTree = "<group>"; };
 		EE25B1312925D28A00E6ED6D /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		EE33F1D6290E17390000FE64 /* initarray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = initarray.c; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		EE5101C42908ADA300615EB4 = {
 			isa = PBXGroup;
 			children = (
+				EECF5616293F6AD900A48615 /* chap7 */,
 				EE25B1302925D20400E6ED6D /* chap6 */,
 				EEF796632920D15500E10ABC /* chap5 */,
 				EE0F9F0D291A57DB00DD02A5 /* List */,
@@ -136,6 +140,17 @@
 				EEACE97D290AA91D003E6F89 /* PrintHeap.h */,
 			);
 			path = PrintHeap;
+			sourceTree = "<group>";
+		};
+		EECF5616293F6AD900A48615 /* chap7 */ = {
+			isa = PBXGroup;
+			children = (
+				42F024DA29417D4100863F8B /* tokuten.csv */,
+				42F024D629417D2900863F8B /* mergesort.c */,
+				42F024D1294178B400863F8B /* mergesort2.c */,
+				42F024C9294175A300863F8B /* product.c */,
+			);
+			path = chap7;
 			sourceTree = "<group>";
 		};
 		EEF796632920D15500E10ABC /* chap5 */ = {
@@ -207,8 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECB61E02931D4E6003658A6 /* kakuninn.c in Sources */,
-				EE1B2189293829E2000AFCB8 /* initData.c in Sources */,
+				42F024D729417D2900863F8B /* mergesort.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
