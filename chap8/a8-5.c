@@ -51,7 +51,7 @@ void PrintTable(Table T[][W + 1]) {
 
 int ReadTable(CofeeTable Table[]) {
   FILE *fp;
-  const char *fname = "talbe81.cvs";
+  const char *fname = "table81.cvs";
   if ((fp = fopen(fname, "r")) == NULL) {
     printf("Not open %s\n", fname);
     exit(EXIT_FAILURE);
