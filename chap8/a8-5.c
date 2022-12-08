@@ -40,7 +40,7 @@ void ClearTable(Table T[][W + 1]) {
 void PrintTable(Table T[][W + 1]) {
   for (int i = 1; i <= N_COFFEE; i++) {
     for (int j = 1; j <= W; j++) {
-      printf("\nT[%d][%d].v=%d\t", i, j, T[i][j].v);
+      printf("\nT[%d][%d].v=%4d\t", i, j, T[i][j].v);
       for (int k = 1; k <= N_COFFEE; k++) {
         printf("%d", T[i][j].s[k]);
       }
