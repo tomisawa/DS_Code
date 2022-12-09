@@ -6,10 +6,6 @@
 	objectVersion = 54;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		EE683F902942049C00A7E3A6 /* a8-5.c in Sources */ = {isa = PBXBuildFile; fileRef = EE683F8F2942049C00A7E3A6 /* a8-5.c */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		EE5101CB2908ADA300615EB4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -236,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE683F902942049C00A7E3A6 /* a8-5.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

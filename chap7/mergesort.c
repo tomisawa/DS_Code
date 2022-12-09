@@ -1,9 +1,9 @@
 //
-//  main.c
-//  DSA09
+//  mergesort.c
+//  chap7
 //
-//  Created by 冨澤眞樹 on 2019/11/20.
-//  Copyright © 2019 Masaki Tomisawa. All rights reserved.
+//  Created by 冨澤眞樹 on 2022/12/09.
+//  Copyright © 2022 Masaki Tomisawa. All rights reserved.
 //
 
 #include <stdio.h>
@@ -42,14 +42,14 @@ int ScoreRead(ScoreTable Table[]) {
   return i;
 }
 
-void PrintD(ScoreTable D[], int D_SIZE) {
-  for (int i = 0; i < D_SIZE; i++) {
-    printf("%2d  ", D[i].Id);
-    printf("%s  ", D[i].Name);
-    printf("%2d  \n", D[i].Score);
-  }
-  printf("\n");
-}
+//void PrintD(ScoreTable D[], int D_SIZE) {
+//  for (int i = 0; i < D_SIZE; i++) {
+//    printf("%2d  ", D[i].Id);
+//    printf("%s  ", D[i].Name);
+//    printf("%2d  \n", D[i].Score);
+//  }
+//  printf("\n");
+//}
 
 void PrintE(ScoreTable D[], int start, int end) {
   for (int i = start; i <= end; i++) {
@@ -62,7 +62,7 @@ void PrintE(ScoreTable D[], int start, int end) {
 
 // Algorithm 7.4
 void Merge74(ScoreTable D[], int left, int mid, int right, ScoreTable M[]) {
-  printf("\tMerge(%d,%d,%d)\n", left, mid, right);
+//  printf("\tMerge(%d,%d,%d)\n", left, mid, right);
   int x = left;
   int y = mid + 1;
   for (int i = 0; i <= right - left; i++) {
@@ -86,11 +86,9 @@ void Merge74(ScoreTable D[], int left, int mid, int right, ScoreTable M[]) {
 
 // Algorithm 7.3
 void Mergesort73(ScoreTable D[], int left, int right, ScoreTable M[]) {
-  //  int mid = (left + right - 1) / 2; //
-  int mid = (left + right) / 2; //
+  int mid = (left + right) / 2;
 
-  printf("MergeSort(%d,%d,%d)\n", left, mid, right);
-  //  PrintE(D, left, right);
+//  printf("MergeSort(%d,%d,%d)\n", left, mid, right);
   if (left < mid) { Mergesort73(D, left, mid, M); }
   if (mid + 1 < right) { Mergesort73(D, mid + 1, right, M); }
   Merge74(D, left, mid, right, M);

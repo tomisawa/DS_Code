@@ -36,7 +36,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/tomy/Library/CloudStorage/OneDrive-maebashi-it.ac.jp/2022/Lecture2022/2022DATuesday4(142)/DS_Code/chap8"
+      customWorkingDirectory = "/Users/tomy/Library/CloudStorage/OneDrive-maebashi-it.ac.jp/2022/Lecture2022/2022DATuesday4(142)/DS_Code/chap7"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
