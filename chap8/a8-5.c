@@ -10,7 +10,7 @@
 #include <stdlib.h>
 
 #define N_COFFEE 5 // Number of coffee types
-#define W        5 // Weight
+#define W        5 // Max Weight
 
 #define COUNTOF(array) (sizeof(array) / sizeof(array[0]))
 
@@ -38,18 +38,19 @@ void ClearTable(Table T[][W + 1]) {
 }
 
 void PrintTable(Table T[][W + 1]) {
+  // T[1][1],...,T[N_COFFEE][W]. T[0][0] is NOT used.
   for (int i = 1; i <= N_COFFEE; i++) {
     for (int j = 1; j <= W; j++) {
       printf("\nT[%d][%d].v=%4d\t", i, j, T[i][j].v);
       for (int k = 1; k <= N_COFFEE; k++) {
-        printf("%d", T[i][j].s[k]);
+        printf("%d", T[i][j].s[k] * k);
       }
     }
     printf("\n");
   }
 }
 
-int ReadTable(CofeeTable Table[]) {
+int ReadCaffeeTable(CofeeTable Table[]) {
   FILE *fp;
   const char *fname = "table81.cvs";
   if ((fp = fopen(fname, "r")) == NULL) {
@@ -78,15 +79,16 @@ void PrintCoffeeTable(CofeeTable T[], int size) {
   printf("\n");
 }
 
+// T[0][0] is NOT used.
+// T[1][1],....,T[N_COFFEE][W]
 void Knapsack(CofeeTable T81[], Table T[][W + 1]) {
-  Table T1, T2;
   ClearTable(T);
   for (int i = 1; i <= N_COFFEE; i++) {
     for (int j = 1; j <= W; j++) {
       T[i][j] = T[i - 1][j];
       if (j >= T81[i].w) {
-        T1 = T[i - 1][j - T81[i].w];
-        T2 = T[i - 1][j];
+        Table T1 = T[i - 1][j - T81[i].w];
+        Table T2 = T[i - 1][j];
         if (T1.v + T81[i].v > T2.v) {
           T1.v = T1.v + T81[i].v;
           T1.s[i] = 1;
@@ -98,13 +100,15 @@ void Knapsack(CofeeTable T81[], Table T[][W + 1]) {
 }
 
 int main(void) {
-  CofeeTable T81[N_COFFEE + 1]; // T81[0] is NOT used.
-  Table T[N_COFFEE + 1][W + 1];
+  CofeeTable Table81[N_COFFEE + 1]; // T81[1],...,T81[N_COFFEE]. T81[0] is NOT
+                                    // used.
+  Table T[N_COFFEE + 1][W + 1];     // T[1][1],...,T[N_COFFEE][W]. T[0][0] is
+                                    // NOT used.
 
-  int n = ReadTable(T81);
-  PrintCoffeeTable(T81, n);
+  int n = ReadCaffeeTable(Table81);
+  PrintCoffeeTable(Table81, n);
 
-  Knapsack(T81, T);
+  Knapsack(Table81, T);
   PrintTable(T);
 
   return 0;
