@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EEC3ACB2294964F900CF9E58 /* a8-5.c in Sources */ = {isa = PBXBuildFile; fileRef = EE683F8F2942049C00A7E3A6 /* a8-5.c */; };
+		EEFC345A294A2EC8009ECE6D /* BinaryTree.c in Sources */ = {isa = PBXBuildFile; fileRef = EEFC3459294A2EC8009ECE6D /* BinaryTree.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +51,7 @@
 		EEF796642920DE1E00E10ABC /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		EEF796662921B40300E10ABC /* initData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = initData.h; sourceTree = "<group>"; };
 		EEF796672921B40300E10ABC /* initData.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = initData.c; sourceTree = "<group>"; };
+		EEFC3459294A2EC8009ECE6D /* BinaryTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BinaryTree.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +95,18 @@
 			path = chap4;
 			sourceTree = "<group>";
 		};
+		EE345529294A2CB9009388C8 /* chap9 */ = {
+			isa = PBXGroup;
+			children = (
+				EEFC3459294A2EC8009ECE6D /* BinaryTree.c */,
+			);
+			path = chap9;
+			sourceTree = "<group>";
+		};
 		EE5101C42908ADA300615EB4 = {
 			isa = PBXGroup;
 			children = (
+				EE345529294A2CB9009388C8 /* chap9 */,
 				EE683F8E2941FBE800A7E3A6 /* chap8 */,
 				EECF5616293F6AD900A48615 /* chap7 */,
 				EE25B1302925D20400E6ED6D /* chap6 */,
@@ -236,7 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC3ACB2294964F900CF9E58 /* a8-5.c in Sources */,
+				EEFC345A294A2EC8009ECE6D /* BinaryTree.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

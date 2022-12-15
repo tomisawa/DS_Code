@@ -100,10 +100,8 @@ void Knapsack(CofeeTable T81[], Table T[][W + 1]) {
 }
 
 int main(void) {
-  CofeeTable Table81[N_COFFEE + 1]; // T81[1],...,T81[N_COFFEE]. T81[0] is NOT
-                                    // used.
-  Table T[N_COFFEE + 1][W + 1];     // T[1][1],...,T[N_COFFEE][W]. T[0][0] is
-                                    // NOT used.
+  CofeeTable Table81[N_COFFEE + 1]; // T81[1],...,T81[N_COFFEE]. T81[0] is NOT used.
+  Table T[N_COFFEE + 1][W + 1];     // T[1][1],...,T[N_COFFEE][W]. T[0][0] is NOT used.
 
   int n = ReadCaffeeTable(Table81);
   PrintCoffeeTable(Table81, n);
