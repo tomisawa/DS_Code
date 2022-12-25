@@ -8,6 +8,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <setjmp.h>
+jmp_buf env;
 
 // The differences from the textbook algorithm 9.1 are as follows.
 // Both level and array X[] start at 0.
@@ -26,8 +28,9 @@ void BT_subsetsum(int s, int level, int X[], int Y[], int n) {
     if (sum == s) {
       printf("ANS \t");
       PrintM(Y, n);
-//      exit(0);
-      return;
+      // longjmp(env, 1);
+      exit(0);
+      // return;
     }
   } else {
     Y[level] = 0; BT_subsetsum(s, level + 1, X, Y, n);
@@ -37,9 +40,11 @@ void BT_subsetsum(int s, int level, int X[], int Y[], int n) {
 }
 
 int main(void) {
-  int X[] = { 1, 14, 6, 9 };
+  int  X[] = { 1, 14, 6, 9 };
   int  n = COUNTOF(X);
   int *Y = (int *)calloc(n, sizeof(int));
+  //  if (!setjmp(env)) BT_subsetsum(15, 0, X, Y, n);
   BT_subsetsum(15, 0, X, Y, n);
+  printf("END\n");
   return 0;
 }
