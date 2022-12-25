@@ -20,13 +20,13 @@ void PrintM(int M[], int n) {
 }
 
 void BT_subsetsum(int s, int level, int X[], int Y[], int n) {
-  if (level > n) {
+  if (level >= n) {
     int sum = 0;
     for (int i = 0; i < n; i++) { sum += Y[i] * X[i]; }
     if (sum == s) {
       printf("ANS \t");
       PrintM(Y, n);
-      exit(0);
+//      exit(0);
       return;
     }
   } else {
@@ -37,11 +37,9 @@ void BT_subsetsum(int s, int level, int X[], int Y[], int n) {
 }
 
 int main(void) {
-  int X[] = { 3, 14, 6, 9 };
-
-  //  int X[] = { 0, 1, 1, 1, 1 };
+  int X[] = { 1, 14, 6, 9 };
   int  n = COUNTOF(X);
   int *Y = (int *)calloc(n, sizeof(int));
-  BT_subsetsum(20, 0, X, Y, n);
+  BT_subsetsum(15, 0, X, Y, n);
   return 0;
 }
