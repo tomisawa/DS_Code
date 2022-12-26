@@ -28,23 +28,29 @@ void BT_subsetsum(int s, int level, int X[], int Y[], int n) {
     if (sum == s) {
       printf("ANS \t");
       PrintM(Y, n);
-      // longjmp(env, 1);
-      exit(0);
-      // return;
+
+      // Select one of (A), (B) and (C), and comment out the remaining two.
+      longjmp(env, 1); // (A)
+      // return; // (B)
+      // exit(0); // (C)
     }
   } else {
     Y[level] = 0; BT_subsetsum(s, level + 1, X, Y, n);
     Y[level] = 1; BT_subsetsum(s, level + 1, X, Y, n);
   }
-  if (level == 0) { printf("Not Found\n"); }
+  if (level == 0) { printf("All searches are completed.\n"); }
 }
 
 int main(void) {
   int  X[] = { 1, 14, 6, 9 };
   int  n = COUNTOF(X);
   int *Y = (int *)calloc(n, sizeof(int));
-  //  if (!setjmp(env)) BT_subsetsum(15, 0, X, Y, n);
-  BT_subsetsum(15, 0, X, Y, n);
-  printf("END\n");
+
+  // Select one of (A), (B) and (C), and comment out the remaining two.
+  if (!setjmp(env)) { BT_subsetsum(15, 0, X, Y, n); } // (A)
+  //  BT_subsetsum(15, 0, X, Y, n); // (B)
+  // (C)
+
+  printf("\nEnd of main() execution\n");
   return 0;
 }
