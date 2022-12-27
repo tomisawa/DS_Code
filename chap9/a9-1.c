@@ -5,6 +5,7 @@
 //  Created by Masaki Tomisawa on 2022/12/25.
 //  Copyright (c) 2022 TOMISAWA Masaki. All rights reserved.
 //
+
 // The differences from the textbook algorithm 9.1 are as follows.
 // Both level and array X[] start at 0.
 
