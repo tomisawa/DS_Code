@@ -28,7 +28,7 @@ void PrintM(int M[], int n) {
 //
 static int s, *X, *Y, n;
 void BT_subsetsum(int level) {
-  if (level >= n) {
+  if (level >= n) { // leaf nodes
     int sum = 0;
     for (int i = 0; i < n; i++) { sum += Y[i] * X[i]; }
     if (sum == s) {
@@ -40,11 +40,11 @@ void BT_subsetsum(int level) {
       // return; // (B)
       // exit(0); // (C)
     }
-  } else {
+  } else {// internal nodes
     Y[level] = 0; BT_subsetsum(level + 1);
     Y[level] = 1; BT_subsetsum(level + 1);
   }
-  if (level == 0) { printf("All searches are completed.\n"); }
+  if (level == 0) { printf("All searches are completed.\n"); } // root node
 }
 
 int main(void) {
