@@ -45,7 +45,7 @@ void BB_subsetsum(int level) {
         lower += Y[i] * X[i]; upper = lower;
       } else { upper += X[i]; }
     }
-    //
+    // if( lower <= s <= upper ) continue else skip ;
     printf("lower=%d,upper=%d\n", lower, upper);
     if ((lower <= s) && (upper >= s)) {
       Y[level] = 0; BB_subsetsum(level + 1);
