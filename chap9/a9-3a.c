@@ -56,11 +56,11 @@ void PrintPTable(void) {
 }
 
 //  static global variable.
-static int     n;  // Problem size
-static int    *X;  // [N_PAINTING];
-static int    *ZX; // [N_PAINTING];
-static int     z;  // Value of provisional solution
-static int     c;  // Knapsack capacity
+static int  n; // Problem size
+static int *X;
+static int *ZX;
+static int  z; // Value of provisional solution
+static int  c; // Knapsack capacity
 
 void SumWP(int *w, int *v) {
   *w = *v = 0;
@@ -83,21 +83,20 @@ int Vmax(int level) {
 void BB_01knapsack(int level) {
   int w, v;
   SumWP(&w, &v);
-  
   if( level >= n ) {
     if((w <= c) && (v > z)) {
       z = v;
       memcpy(ZX, X, sizeof(ZX) * n);
-      printf("leaf level=%d,w=%d,v=%d,z=%d\n",level, w,v,z);
+      printf("leaf level=%d,w=%d,v=%d,z=%d\n", level, w, v, z);
     }
   } else {
-    printf("level=%d,w=%d,v=%d,z=%d\n",level,w,v,z);
+    printf("level=%d,w=%d,v=%d,z=%d\n", level, w, v, z);
     if( !CheckA ) {
       if( CheckB ) {
         if( v > z ) {
           z = v;
           memcpy(ZX, X, sizeof(ZX) * n);
-          printf("max z=%d\n",z);
+          printf("max z=%d\n", z);
         }
       } else if( !CheckC ) {
         X[level] = 1; BB_01knapsack(level + 1);
@@ -108,7 +107,7 @@ void BB_01knapsack(int level) {
 }
 
 int main(void) {
-  n = ReadPTable("knap2.cvs");
+  n = ReadPTable("knap3.cvs");
   PrintPTable();
 
   X = (int *)calloc(n, sizeof(int));
