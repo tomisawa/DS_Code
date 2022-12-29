@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE4AF8FD295D2E0300348ADF /* a9-3.c in Sources */ = {isa = PBXBuildFile; fileRef = EE4AF8FC295D2E0300348ADF /* a9-3.c */; };
+		EE51FB0F295D594100E105B6 /* a9-3a.c in Sources */ = {isa = PBXBuildFile; fileRef = EE51FB0E295D594100E105B6 /* a9-3a.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +42,7 @@
 		EE5101D82908AE9500615EB4 /* keisoku.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keisoku.c; sourceTree = "<group>"; };
 		EE5101D92908AE9500615EB4 /* keisoku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keisoku.h; sourceTree = "<group>"; };
 		EE5101DA2908AE9500615EB4 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		EE51FB0E295D594100E105B6 /* a9-3a.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "a9-3a.c"; sourceTree = "<group>"; };
 		EE683F8F2942049C00A7E3A6 /* a8-5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "a8-5.c"; sourceTree = "<group>"; };
 		EE683F91294204B100A7E3A6 /* table81.cvs */ = {isa = PBXFileReference; lastKnownFileType = text; path = table81.cvs; sourceTree = "<group>"; };
 		EE683F92294204EF00A7E3A6 /* coffee_10types.cvs */ = {isa = PBXFileReference; lastKnownFileType = text; path = coffee_10types.cvs; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 			children = (
 				EE4AF8FE295D2E3800348ADF /* knap2.cvs */,
 				EE4AF8FC295D2E0300348ADF /* a9-3.c */,
+				EE51FB0E295D594100E105B6 /* a9-3a.c */,
 				EE0D4F8F2958623B002B3085 /* a9-1.c */,
 				EE4AF8F4295A95AC00348ADF /* a9-1a.c */,
 				EE4AF8F8295B53C900348ADF /* a9-2a.c */,
@@ -256,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE4AF8FD295D2E0300348ADF /* a9-3.c in Sources */,
+				EE51FB0F295D594100E105B6 /* a9-3a.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
