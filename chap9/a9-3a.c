@@ -86,7 +86,7 @@ void BB_01knapsack(int level) {
   if( level >= n ) {
     if((w <= c) && (v > z)) {
       z = v;
-      memcpy(ZX, X, sizeof(ZX) * n);
+      memcpy(ZX, X, sizeof(*ZX) * n);
       printf("leaf level=%d,w=%d,v=%d,z=%d\n", level, w, v, z);
     }
   } else {
@@ -95,7 +95,7 @@ void BB_01knapsack(int level) {
       if( CheckB ) {
         if( v > z ) {
           z = v;
-          memcpy(ZX, X, sizeof(ZX) * n);
+          memcpy(ZX, X, sizeof(*ZX) * n);
           printf("max z=%d\n", z);
         }
       } else if( !CheckC ) {
@@ -110,8 +110,8 @@ int main(void) {
   n = ReadPTable("knap3.cvs");
   PrintPTable();
 
-  X = (int *)calloc(n, sizeof(int));
-  ZX = (int *)calloc(n, sizeof(int));
+  X = (int *)calloc(n, sizeof(*X));
+  ZX = (int *)calloc(n, sizeof(*ZX));
   z = 0;
   c = 10;
   BB_01knapsack(0);
