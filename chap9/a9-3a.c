@@ -56,8 +56,8 @@ void PrintPTable(void) {
 }
 
 //  static global variable.
-static int  n; // Problem size
-static int *X;
+static int  n; // Equal to N_PAINTING, Number of paintings
+static int *X; //
 static int *ZX;
 static int  z; // Value of provisional solution
 static int  c; // Knapsack capacity
