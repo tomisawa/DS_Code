@@ -1,8 +1,8 @@
 //
-//  a9-3b.c
+//  a9-3c.c
 //  chap9
 //
-//  Created by Masaki Tomisawa on 2022/12/29.
+//  Created by Masaki Tomisawa on 2022/12/30.
 //  Copyright (c) 2022 TOMISAWA Masaki. All rights reserved.
 //
 
@@ -68,27 +68,27 @@ static int *ZX; // Incumbent solution
 static int  z;  // Incumbent value
 static int  c;  // Knapsack capacity
 
-void SumWP(int *w, int *v) {
-  *w = *v = 0;
-  for( int i = 0; i < n; i++ ) {
-    *w += T91[i].w * X[i];
-    *v += T91[i].p * X[i];
-  }
-}
-
 int Vmax(int level) {
   int Vmax = 0;
   for( int i = level; i < n; i++ ) { if( T91[i].v > Vmax ) { Vmax = T91[i].v; } }
   return Vmax;
 }
 
+void CalcWV(int *w, int *v)
+{
+  for( int i = 0; i < n; i++ ) {
+    *w += T91[i].w * X[i];
+    *v += T91[i].p * X[i];
+  }
+}
 #define CheckA (w > c)
 #define CheckB (w == c)
 #define CheckC (v + (c - w) * Vmax(level) < z)
 
 void BB_01knapsack(int level) {
-  int w, v;
-  SumWP(&w, &v);
+  int w = 0, v = 0;
+  CalcWV(&w, &v);
+  
   if( level >= n ) {
     if((w <= c) && (v > z)) {
       z = v;
@@ -123,10 +123,7 @@ int main(void) {
   BB_01knapsack(0);
 
   int w = 0, v = 0;
-  for( int i = 0; i < n; i++ ) {
-    v += ZX[i] * T91[i].p;
-    w += ZX[i] * T91[i].w;
-  }
+  CalcWV(&w, &v);
   printf("\n");
   for( int i = 0; i < n; i++ ) { printf("%d", ZX[i]); }
   printf("\tPrice=%d\tWeight=%d\n", v, w);
