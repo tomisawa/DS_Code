@@ -74,7 +74,7 @@ int Vmax(int level) {
   return Vmax;
 }
 
-void CalcWV(int *w, int *v)
+void Calc_wv(int *w, int *v)
 {
   for( int i = 0; i < n; i++ ) {
     *w += T91[i].w * X[i];
@@ -87,7 +87,7 @@ void CalcWV(int *w, int *v)
 
 void BB_01knapsack(int level) {
   int w = 0, v = 0;
-  CalcWV(&w, &v);
+  Calc_wv(&w, &v);
   
   if( level >= n ) {
     if((w <= c) && (v > z)) {
@@ -123,7 +123,7 @@ int main(void) {
   BB_01knapsack(0);
 
   int w = 0, v = 0;
-  CalcWV(&w, &v);
+  Calc_wv(&w, &v);
   printf("\n");
   for( int i = 0; i < n; i++ ) { printf("%d", ZX[i]); }
   printf("\tPrice=%d\tWeight=%d\n", v, w);
