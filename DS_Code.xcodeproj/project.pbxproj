@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE51FB0F295D594100E105B6 /* a9-3a.c in Sources */ = {isa = PBXBuildFile; fileRef = EE51FB0E295D594100E105B6 /* a9-3a.c */; };
+		EE9BB793295EB9250060C7C4 /* a9-3b.c in Sources */ = {isa = PBXBuildFile; fileRef = EE9BB791295EB7200060C7C4 /* a9-3b.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +48,8 @@
 		EE683F91294204B100A7E3A6 /* table81.cvs */ = {isa = PBXFileReference; lastKnownFileType = text; path = table81.cvs; sourceTree = "<group>"; };
 		EE683F92294204EF00A7E3A6 /* coffee_10types.cvs */ = {isa = PBXFileReference; lastKnownFileType = text; path = coffee_10types.cvs; sourceTree = "<group>"; };
 		EE7CDB0A29254352004DD6FF /* heapsort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = heapsort.c; sourceTree = "<group>"; };
+		EE9BB791295EB7200060C7C4 /* a9-3b.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "a9-3b.c"; sourceTree = "<group>"; };
+		EE9BB792295EB75D0060C7C4 /* knap4.cvs */ = {isa = PBXFileReference; lastKnownFileType = text; path = knap4.cvs; sourceTree = "<group>"; };
 		EEACE97D290AA91D003E6F89 /* PrintHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintHeap.h; sourceTree = "<group>"; };
 		EEACE97E290AA91D003E6F89 /* PrintHeap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PrintHeap.c; sourceTree = "<group>"; };
 		EEACE97F290AA91D003E6F89 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -107,8 +109,10 @@
 			children = (
 				EE51FB10295DB9D300E105B6 /* knap3.cvs */,
 				EE4AF8FE295D2E3800348ADF /* knap2.cvs */,
+				EE9BB792295EB75D0060C7C4 /* knap4.cvs */,
 				EE4AF8FC295D2E0300348ADF /* a9-3.c */,
 				EE51FB0E295D594100E105B6 /* a9-3a.c */,
+				EE9BB791295EB7200060C7C4 /* a9-3b.c */,
 				EE0D4F8F2958623B002B3085 /* a9-1.c */,
 				EE4AF8F4295A95AC00348ADF /* a9-1a.c */,
 				EE4AF8F8295B53C900348ADF /* a9-2a.c */,
@@ -260,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE51FB0F295D594100E105B6 /* a9-3a.c in Sources */,
+				EE9BB793295EB9250060C7C4 /* a9-3b.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
