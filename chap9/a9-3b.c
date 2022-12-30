@@ -1,5 +1,5 @@
 //
-//  a9-3.c
+//  a9-3b.c
 //  chap9
 //
 //  Created by Masaki Tomisawa on 2022/12/29.
@@ -11,7 +11,6 @@
 #include <string.h>
 
 #define COUNTOF(array) (sizeof(array) / sizeof(array[0]))
-#define N_PAINTING 4 // Number of Painting
 
 typedef struct {
   int  Id;
@@ -21,9 +20,9 @@ typedef struct {
   int  v;
 } PTable;
 
-//  static global variable.
+// About read data, the follows is static global variable
 static  PTable *T91;
-static int  n; // Number of paintings
+static int n; // Number of paintings
 
 void ReadPTable(char *fname) {
   FILE *fp;
@@ -32,9 +31,11 @@ void ReadPTable(char *fname) {
     exit(EXIT_FAILURE);
   }
 
+  //  The first row is the number of data.
   fscanf(fp, "%d", &n);
-  T91 = (PTable *)calloc(n, sizeof(*T91)*n);
-  
+  T91 = (PTable *)calloc(n, sizeof(*T91) * n);
+
+  // Read the second and subsequent lines of data
   int i = 0;
   while((fscanf(fp, "%d,%[^,],%d,%d", &(T91[i].Id), T91[i].Name, &(T91[i].w),
                 &(T91[i].p))) != EOF ) {
@@ -42,7 +43,7 @@ void ReadPTable(char *fname) {
     i = i + 1;
   }
   fclose(fp);
-  if(i != n) {
+  if( i != n ) {
     printf("The number of data read is wrong.\n");
     exit(EXIT_FAILURE);
   }
@@ -61,11 +62,11 @@ void PrintPTable(void) {
   printf("\n");
 }
 
-//  static global variable.
-static int *X; //
-static int *ZX;
-static int  z; // Value of provisional solution
-static int  c; // Knapsack capacity
+// About BB_01knapsack(), the follows is static global variable.
+static int *X;  // Contents of the knapsack
+static int *ZX; // Incumbent solution
+static int  z;  // Incumbent value
+static int  c;  // Knapsack capacity
 
 void SumWP(int *w, int *v) {
   *w = *v = 0;
@@ -92,16 +93,16 @@ void BB_01knapsack(int level) {
     if((w <= c) && (v > z)) {
       z = v;
       memcpy(ZX, X, sizeof(*ZX) * n);
-      printf("leaf level=%d,w=%d,v=%d,z=%d\n", level, w, v, z);
+      printf("leaf node; level=%d,w=%d,v=%d,z=%d\n", level, w, v, z);
     }
   } else {
-    printf("level=%d,w=%d,v=%d,z=%d\n", level, w, v, z);
+    printf("internal node; level=%d,w=%d,v=%d,z=%d\n", level, w, v, z);
     if( !CheckA ) {
       if( CheckB ) {
         if( v > z ) {
           z = v;
           memcpy(ZX, X, sizeof(*ZX) * n);
-          printf("max z=%d\n", z);
+          printf("\tmax z=%d\n", z);
         }
       } else if( !CheckC ) {
         X[level] = 1; BB_01knapsack(level + 1);
@@ -112,25 +113,24 @@ void BB_01knapsack(int level) {
 }
 
 int main(void) {
-
-  ReadPTable("knap4.cvs");
+  ReadPTable("knap5.csv");
   PrintPTable();
 
   X = (int *)calloc(n, sizeof(*X));
   ZX = (int *)calloc(n, sizeof(*ZX));
   z = 0;
-  c = 10;
+  c = 4;
   BB_01knapsack(0);
 
-  int sump = 0, sumw = 0;
+  int w = 0, v = 0;
   for( int i = 0; i < n; i++ ) {
-    sump += ZX[i] * T91[i].p;
-    sumw += ZX[i] * T91[i].w;
+    v += ZX[i] * T91[i].p;
+    w += ZX[i] * T91[i].w;
   }
   printf("\n");
   for( int i = 0; i < n; i++ ) { printf("%d", ZX[i]); }
-  printf("\tPrice=%d\tWeight=%d\n", sump, sumw);
-  
+  printf("\tPrice=%d\tWeight=%d\n", v, w);
+
   free(T91);
   free(X);
   free(ZX);
